@@ -25,30 +25,31 @@ const patientSchema = new mongoose.Schema(
                 trim: true
             }
         },
-            chosenDoctor: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Doctor'
-            },
-            appointments: [{
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Appointment'
-            }],
-            medicalRecords: [{
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'MedicalRecord'
-            }],
-            department: {
-                type: String,
-                trim: true
-            },
-            payments: [{
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Payment'
-            }],
-            subscription: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Subscription'
-            }
+
+        chosenDoctor: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Doctor'
+        },
+        appointments: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Appointment'
+        }],
+        medicalRecords: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'MedicalRecord'
+        }],
+        department: {
+            type: String,
+            trim: true
+        },
+        payments: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Payment'
+        }],
+        subscription: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Subscription'
+        }
     },
     {timestamps: true}
 )
