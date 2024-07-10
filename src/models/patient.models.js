@@ -1,13 +1,10 @@
-import mongoose, {Schema} from "mongoose";
-
-const patientSchema = new mongoose.Schema(
+const patientSchema = new Schema(
     {
         user: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'User',
             required: true
         },
-        
         emergencyContact: {
             name: {
                 type: String,
@@ -25,17 +22,16 @@ const patientSchema = new mongoose.Schema(
                 trim: true
             }
         },
-
         chosenDoctor: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Doctor'
         },
         appointments: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Appointment'
         }],
         medicalRecords: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'MedicalRecord'
         }],
         department: {
@@ -43,15 +39,15 @@ const patientSchema = new mongoose.Schema(
             trim: true
         },
         payments: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Payment'
         }],
         subscription: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Subscription'
         }
     },
-    {timestamps: true}
-)
+    { timestamps: true }
+);
 
 export const Patient = mongoose.model('Patient', patientSchema);
